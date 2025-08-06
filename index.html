@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Electron Watermelon Game</title>
+    <style>
+        body { margin: 0; background-color: #faf8ef; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        #game-wrapper { text-align: center; }
+        #ui-container { margin-bottom: 10px; }
+        #score { font-size: 24px; font-weight: bold; color: #776e65; }
+        #restart-button { padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; background-color: #8f7a66; color: white; border-radius: 5px; }
+        #game-over-screen { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(238, 228, 218, 0.73); display: none; flex-direction: column; justify-content: center; align-items: center; }
+        #game-over-text { font-size: 48px; font-weight: bold; color: #776e65; }
+        canvas { background-color: #eee; display: block; }
+    </style>
+</head>
+<body>
+    <div id="game-wrapper">
+        <div id="ui-container">
+            <span>Score: <span id="score">0</span></span>
+        </div>
+        <div id="game-container" style="position: relative;">
+            <canvas id="game-canvas"></canvas>
+            <div id="warning-message">Game Over in 3s...</div>
+            <div id="game-over-screen">
+                <div id="game-over-text">Game Over</div>
+                <button id="restart-button">Restart</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./node_modules/matter-js/build/matter.js"></script>
+    <script src="./fruit.js"></script>
+    <script src="./renderer.js"></script>
+</body>
+</html>

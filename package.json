@@ -1,0 +1,46 @@
+{
+  "name": "electron-watermelon-game",
+  "version": "1.0.0",
+  "description": "A desktop watermelon game built with Electron.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": [
+    "game",
+    "electron",
+    "matter-js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "matter-js": "^0.19.0"
+  },
+  "build": {
+    "appId": "com.example.watermelon",
+    "productName": "Watermelon Game",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "fruit.js",
+      "renderer.js",
+      "node_modules/matter-js/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
