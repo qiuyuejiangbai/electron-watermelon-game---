@@ -11,6 +11,8 @@ function createWindow() {
     height: 720,
     // 禁止窗口大小调整
     resizable: false,
+    // 隐藏菜单栏，确保对话框无菜单栏
+    autoHideMenuBar: true,
     // 设置webPreferences
     webPreferences: {
       // 设置预加载脚本
@@ -24,6 +26,10 @@ function createWindow() {
 
   // 加载index.html文件
   mainWindow.loadFile("index.html");
+  // 强制隐藏菜单栏（即使按下 Alt 也不显示）
+  if (typeof mainWindow.setMenuBarVisibility === "function") {
+    mainWindow.setMenuBarVisibility(false);
+  }
   // 打开开发者工具
   // mainWindow.webContents.openDevTools(); // Uncomment to debug
 }
