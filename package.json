@@ -31,6 +31,7 @@
       "index.html",
       "fruit.js",
       "renderer.js",
+      "assets/**/*",
       "node_modules/matter-js/**/*"
     ],
     "win": {
